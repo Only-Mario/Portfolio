@@ -309,7 +309,7 @@ const app = Vue.createApp({
         },
         downloadCV() {
             const link = document.createElement('a');
-            link.href = '/path/to/your/cv.pdf'; // Remplacez par le chemin réel de votre CV
+            link.href = 'https://cvdesignr.com/p/64e4062b71edd'; 
             link.download = 'Mario_Ligan_CV.pdf';
             document.body.appendChild(link);
             link.click();
