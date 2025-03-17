@@ -32,13 +32,15 @@ const app = Vue.createApp({
                         { name: 'HTML5', icon: 'html5' },
                         { name: 'CSS3', icon: 'css3-alt' },
                         { name: 'JavaScript', icon: 'js' },
-                        { name: 'Bootstrap', icon: 'bootstrap' }
+                        { name: 'Bootstrap', icon: 'bootstrap' },
+                        { name: 'Flutter', icon: 'flutter' }
                     ]
                 },
                 {
                     name: 'Backend',
                     skills: [
                         { name: 'PHP', icon: 'php' },
+                        { name: 'Python', icon: 'python' },
                         { name: 'Laravel', icon: 'laravel' },
                         { name: 'Symfony', icon: 'symfony' },
                         { name: 'MySQL', icon: 'database' }
