@@ -205,7 +205,17 @@ const app = Vue.createApp({
             ],
             currentTestimonial: 0,
             projectModalOpen: false,
-            currentProject: null
+            currentProject: null,
+
+            //mail ....
+            loading: false,
+            statusMessage: '',
+            emailjsConfig: {
+                serviceId: 'service_hva8mah',
+                templateId: 'template_h689iia',
+                userId: 'vN-HLiAD_dY93n1s3'
+            },
+            lastSubmission: null,
         }
     },
     computed: {
@@ -311,7 +321,7 @@ const app = Vue.createApp({
         },
         downloadCV() {
             const link = document.createElement('a');
-            link.href = 'https://cvdesignr.com/p/64e4062b71edd'; 
+            link.href = 'https://cvdesignr.com/p/64e4062b71edd';
             link.download = 'Mario_Ligan_CV.pdf';
             document.body.appendChild(link);
             link.click();
@@ -392,6 +402,35 @@ const app = Vue.createApp({
             }
 
             setTimeout(type, 1000);
+        },
+
+        async handleSubmit() {
+            this.loading = true;
+            this.statusMessage = '';
+
+            try {
+                await emailjs.sendForm(
+                    this.emailjsConfig.serviceId,
+                    this.emailjsConfig.templateId,
+                    '#contact-form',
+                    this.emailjsConfig.userId
+                );
+
+                this.statusMessage = 'Message envoyé avec succès !';
+                document.getElementById('contact-form').reset();
+            } catch (error) {
+                this.statusMessage = 'Erreur lors de l\'envoi. Veuillez réessayer.';
+                console.error('EmailJS Error:', error);
+            } finally {
+                this.loading = false;
+                setTimeout(() => this.statusMessage = '', 5000);
+            }
+
+            if (this.lastSubmission && Date.now() - this.lastSubmission < 30000) {
+                this.statusMessage = 'Veuillez patienter avant de renvoyer';
+                return;
+            }
+            this.lastSubmission = Date.now();
         }
     },
     mounted() {
@@ -423,29 +462,6 @@ const app = Vue.createApp({
         });
 
         this.startAutoPlay();
-
-        // Initialize form submission
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const formData = new FormData(contactForm);
-
-                fetch('/submit-form', {
-                    method: 'POST',
-                    body: formData,
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        alert('Votre message a été envoyé avec succès!');
-                        contactForm.reset();
-                    })
-                    .catch(error => {
-                        alert('Une erreur s\'est produite. Veuillez réessayer.');
-                    });
-            });
-        }
-
         this.pageLoaded = true;
         this.initAnimations();
     },

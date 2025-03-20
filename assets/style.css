@@ -1792,3 +1792,24 @@ footer {
         transform: translateY(-20px);
     }
 }
+
+.status {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+  
+  .status[data-success] {
+    background: #d4edda;
+    color: #155724;
+  }
+  
+  .status[data-error] {
+    background: #f8d7da;
+    color: #721c24;
+  }
+  
+  .submit-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
