@@ -1,7 +1,7 @@
 
 // Initialisation Vue.js corrigée
 const app = Vue.createApp({
-    //el: '#app',
+    //el: '#app',  timeline
     data() {
         return {
             pageLoaded: false,
@@ -31,7 +31,8 @@ const app = Vue.createApp({
                     skills: [
                         { name: 'HTML5', icon: 'html5' },
                         { name: 'CSS3', icon: 'css3-alt' },
-                        { name: 'JavaScript', icon: 'js' },
+                        { name: 'JS', icon: 'js' },
+                        { name: 'VueJs', icon: 'vuejs' },
                         { name: 'Bootstrap', icon: 'bootstrap' },
                         { name: 'Flutter', icon: 'flutter' }
                     ]
@@ -242,7 +243,8 @@ const app = Vue.createApp({
             });
             gsap.utils.toArray('.timeline-item').forEach((el, index) => {
                 gsap.from(el, {
-                    x: index % 2 === 0 ? -100 : 100,
+                    // x: index % 2 === 0 ? -100 : 100,
+                    y: 30,
                     opacity: 0,
                     duration: 0.8,
                     scrollTrigger: {
@@ -404,6 +406,7 @@ const app = Vue.createApp({
             setTimeout(type, 1000);
         },
 
+        // form
         async handleSubmit() {
             // Vérification du délai entre les envois
             if (this.lastSubmission && Date.now() - this.lastSubmission < 30000) {

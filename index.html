@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
+<head lang="fr" :dir="lang === 'en' ? 'ltr' : 'ltr'">
     <meta charset="UTF-8">
     <meta name="author" content="Mario Merveille Ligan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Ajouter pour le SEO -->
-    <meta property="og:image" content="https://marioligan.netlify.app/assets/images/tof.jpg">
+    <meta property="og:image" content="https://marioligan.netlify.app/assets/images/mario.png">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/logoMario.jpg" />
     <link rel="canonical" href="https://marioligan.netlify.app/">
     <title>Mario Ligan | Développeur Web & Mobile</title>
@@ -21,11 +21,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.js"></script>
-    <!-- email -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
     <!-- ajax -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/loaders.css/0.1.2/loaders.min.css">
     <link rel="stylesheet" href="assets/style.css">
+
+    <!-- email EmailJS  -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 </head>
 
@@ -59,6 +61,9 @@
                     </li>
                 </ul>
             </nav>
+            <!-- <button class="lang-switcher" @click="toggleLang">
+                {{ lang === 'en' ? 'FR' : 'EN' }}
+            </button> -->
         </div>
     </header>
 
@@ -70,7 +75,7 @@
         <div class="container hero-container">
             <div class="hero-content">
                 <div class="hero-tag">Développeur Web & Mobile</div>
-                <h1>M. Merveille Ligan</h1>
+                <h1>Mario Merveille Ligan</h1>
                 <h2>J'apporte vos idées à la vie <span class="typed-text" ref="typedText"></span></h2>
                 <p>Spécialisé dans le développement d'applications web et mobiles modernes, intuitives et performantes.
                 </p>
@@ -96,7 +101,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/images/photo.png" alt="Mario Ligan">
+                <img src="assets/images/victory.png" alt="Merveille Ligan">
                 <div class="hero-experience">
                     <div class="hero-experience-years">{{ calculateExperience() }}</div>
                     <div class="hero-experience-text">Années<br>d'expérience</div>
@@ -400,7 +405,7 @@
     <footer>
         <div class="container footer-container">
             <div class="footer-about">
-                <h3>Merveille LIGAN</h3>
+                <h3>Mario Merveille LIGAN</h3>
                 <p>Développeur web et mobile passionné par la création de solutions innovantes.</p>
             </div>
             <div class="footer-links">
@@ -462,8 +467,8 @@
             </div>
         </div>
     </div>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script src="assets/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>
