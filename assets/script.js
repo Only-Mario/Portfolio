@@ -230,32 +230,9 @@ const app = Vue.createApp({
     },
     methods: {
         initAnimations() {
-            gsap.utils.toArray('.hero h1, .hero h2, .hero p, .hero-buttons').forEach(el => {
+            gsap.utils.toArray('.hero h1, .hero h2, .hero p, .hero-buttons, .timeline-item, .project-card').forEach(el => {
                 gsap.from(el, {
                     y: 30,
-                    opacity: 0,
-                    duration: 0.8,
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top 80%"
-                    }
-                });
-            });
-            gsap.utils.toArray('.timeline-item').forEach((el, index) => {
-                gsap.from(el, {
-                    // x: index % 2 === 0 ? -100 : 100,
-                    y: 30,
-                    opacity: 0,
-                    duration: 0.8,
-                    scrollTrigger: {
-                        trigger: el,
-                        start: "top 80%"
-                    }
-                });
-            });
-            gsap.utils.toArray('.project-card').forEach(el => {
-                gsap.from(el, {
-                    y: 20,
                     opacity: 0,
                     duration: 0.8,
                     scrollTrigger: {
