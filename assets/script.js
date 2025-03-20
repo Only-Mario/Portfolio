@@ -405,6 +405,12 @@ const app = Vue.createApp({
         },
 
         async handleSubmit() {
+            // Vérification du délai entre les envois
+            if (this.lastSubmission && Date.now() - this.lastSubmission < 30000) {
+                this.statusMessage = 'Veuillez patienter 30 secondes avant un nouvel envoi';
+                return;
+            }
+
             this.loading = true;
             this.statusMessage = '';
 
@@ -416,22 +422,27 @@ const app = Vue.createApp({
                     this.emailjsConfig.userId
                 );
 
-                this.statusMessage = 'Message envoyé avec succès !';
+                this.statusMessage = '✅ Message envoyé avec succès !';
                 document.getElementById('contact-form').reset();
+                this.lastSubmission = Date.now();
+
+                // Redirection optionnelle vers une page de confirmation
+                // window.location.href = '/merci.html';
+
             } catch (error) {
-                this.statusMessage = 'Erreur lors de l\'envoi. Veuillez réessayer.';
-                console.error('EmailJS Error:', error);
+                console.error('Erreur EmailJS:', error);
+                this.statusMessage = '❌ Erreur d\'envoi : ' + this.getErrorMessage(error);
             } finally {
                 this.loading = false;
                 setTimeout(() => this.statusMessage = '', 5000);
             }
+        },
 
-            if (this.lastSubmission && Date.now() - this.lastSubmission < 30000) {
-                this.statusMessage = 'Veuillez patienter avant de renvoyer';
-                return;
-            }
-            this.lastSubmission = Date.now();
-        }
+        getErrorMessage(error) {
+            if (error.status === 400) return 'Formulaire incomplet';
+            if (error.status === 429) return 'Trop de tentatives. Réessayez plus tard';
+            return 'Problème de connexion. Réessayez';
+        },
     },
     mounted() {
         // Initialize
