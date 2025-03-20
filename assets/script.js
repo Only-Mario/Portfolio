@@ -100,7 +100,20 @@ const app = Vue.createApp({
                         'Optimisation SEO',
                         'Migration des données'
                     ]
-                }
+                },
+                {
+                    title: 'Développement Mobile',
+                    icon: 'fas fa-mobile-alt',
+                    description: 'Création d\'applications natives et cross-platform performantes avec Flutter pour iOS et Android.',
+                    features: [
+                        'Applications sur mesure avec Flutter',
+                        'Développement multiplateforme (iOS/Android)',
+                        'Intégration d\'API RESTful',
+                        'UI/UX optimisée pour mobile',
+                        'Publication sur les stores',
+                        'Maintenance et mises à jour'
+                    ]
+                },
             ],
             timeline: [
                 {
