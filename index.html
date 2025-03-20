@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head lang="fr" :dir="lang === 'en' ? 'ltr' : 'ltr'">
+<head>
     <meta charset="UTF-8">
-    <meta name="author" content="Mario Merveille Ligan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Ajouter pour le SEO -->
-    <meta property="og:image" content="https://marioligan.netlify.app/assets/images/mario.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logoMario.jpg" />
-    <link rel="canonical" href="https://marioligan.netlify.app/">
-    <title>Mario Ligan | Développeur Web & Mobile</title>
+
+    <!-- Core Metadata -->
+    <title>Mario Merveille Ligan | Développeur Fullstack Web & Mobile - Laravel, Flutter, Symfony</title>
     <meta name="description"
-        content="Mario Merveille Ligan, développeur web fullstack et mobile spécialisé en Laravel, Symfony, Flutter et WordPress">
+        content="Développeur web & mobile expert en création d'applications modernes. Solutions sur mesure avec WordPress, Laravel et Flutter.">
+    <meta name="author" content="Mario Merveille Ligan">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marioligan.netlify.app/">
+    <meta property="og:title" content="Mario Merveille Ligan | Développeur Fullstack Web & Mobile">
+    <meta property="og:description"
+        content="Développeur web & mobile expert en création d'applications modernes. Solutions sur mesure avec WordPress, Laravel et Flutter.">
+    <meta property="og:image" content="https://marioligan.netlify.app/assets/images/mario.png">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://marioligan.netlify.app/">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/webp" href="assets/images/logoMario.jpg">
+
+    <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts with swap -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.js"></script>
-
-    <!-- ajax -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/loaders.css/0.1.2/loaders.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/style.css">
 
-    <!-- email EmailJS  -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
+    <!-- Deferred Scripts -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.js"></script>
 </head>
 
 <body id="app" v-cloak>
@@ -89,10 +101,11 @@
                 </div>
                 <div class="hero-socials">
                     <a href="https://www.linkedin.com/in/ligan-mario-965077218/" target="_blank"
-                        class="hero-social-link">
+                        class="hero-social-link" rel="noopener noreferrer">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/Only-Mario" target="_blank" class="hero-social-link">
+                    <a href="https://github.com/Only-Mario" target="_blank" class="hero-social-link"
+                        rel="noopener noreferrer">
                         <i class="fab fa-github"></i>
                     </a>
                     <a href="#" target="_blank" class="hero-social-link">
@@ -101,7 +114,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/images/victory.png" alt="Merveille Ligan">
+                <img src="assets/images/victory.png" alt="Mario Ligan - Développeur Fullstack">
                 <div class="hero-experience">
                     <div class="hero-experience-years">{{ calculateExperience() }}</div>
                     <div class="hero-experience-text">Années<br>d'expérience</div>
@@ -361,9 +374,10 @@
                         </div>
                     </div>
                     <div class="contact-social">
-                        <a href="https://www.linkedin.com/in/ligan-mario-965077218/" class="social-link"><i
-                                class="fab fa-linkedin-in"> </i></a>
-                        <a href="https://github.com/Only-Mario" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/ligan-mario-965077218/" class="social-link"
+                            rel="noopener noreferrer"><i class="fab fa-linkedin-in"> </i></a>
+                        <a href="https://github.com/Only-Mario" class="social-link" rel="noopener noreferrer"><i
+                                class="fab fa-github"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
@@ -427,9 +441,10 @@
             <div class="footer-links">
                 <h4>Réseaux sociaux</h4>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/ligan-mario-965077218/" class="social-link"><i
-                            class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/Only-Mario" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ligan-mario-965077218/" class="social-link"
+                        rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Only-Mario" class="social-link" rel="noopener noreferrer"><i
+                            class="fab fa-github"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
@@ -467,8 +482,42 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="assets/script.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mario Merveille Ligan",
+        "jobTitle": "Développeur Fullstack Web & Mobile",
+        "url": "https://marioligan.netlify.app/",
+        "image": "https://marioligan.netlify.app/assets/images/photo.png",
+        "description": "Développeur fullstack spécialisé en Laravel, WordPress et Flutter. Création d'applications mobiles et sites web responsive.",
+        "sameAs": [
+        "https://www.linkedin.com/in/ligan-mario-965077218/",
+        "https://github.com/Only-Mario"
+        ],
+        "knowsAbout": [
+        "WordPress",
+        "Laravel",
+        "Flutter",
+        "Symfony",
+        "Développement d'applications mobiles",
+        "Création de sites web responsive",
+        "Référencement SEO",
+        "Refonte personnalisée",
+        "Intégration CMS",
+        "Développement Frontend"
+        ],
+        "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Institut de Formation et de Recherche en Informatique",
+        "url": "https://ifri-uac.bj/"
+        }
+    }
+    </script>
+
+    <!-- Scripts chargés de manière non bloquante -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer src="assets/script.js"></script>
 </body>
 
 </html>
