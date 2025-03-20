@@ -137,7 +137,29 @@ const app = Vue.createApp({
             ],
             projects: [
                 {
-                    id: 1,
+                    id: 7,
+                    title: 'kinetik  Paris',
+                    description: 'Maintenance et amélioration d\'une boutique Shopify pour vêtements dédiés au running et au trail.',
+                    image: 'assets/images/kinetik.png',
+                    category: 'E-commerce',
+                    tags: ['Shopify', 'JavaScript', 'Liquid'],
+                    demo: 'https://kinetikadrenalink.com/',
+                    github: null,
+                    details: 'Refonte des pages produits pour les catégories Homme, Femme. Optimisation de l\'expérience utilisateur sur la boutique en ligne.'
+                },
+                {
+                    id: 6,
+                    title: 'NEO ANIMALIA',
+                    description: 'Refonte du site de NEO ANIMALIA, une entreprise belge fondée en 2009 par des professionnels du secteur vétérinaire...',
+                    image: 'assets/images/neoanimalia.png',
+                    category: 'Web',
+                    tags: ['Bootstrap', 'CSS', 'JS'],
+                    demo: 'https://neoanimalia.be/',
+                    github: null,
+                    details: 'Projet de refonte complète, la refonte de toutes les pages sans exception'
+                },
+                {
+                    id: 5,
                     title: 'Les sens de capucine',
                     description: 'Refonte complète d\'un blog WordPress avec optimisation des fonctionnalités de recherche.',
                     image: 'assets/images/capucine.png',
@@ -148,7 +170,7 @@ const app = Vue.createApp({
                     details: 'Projet de refonte complète incluant la sauvegarde des données, la refonte de la page d\'accueil, des pages Beautés, Looks/Mode, Lifestyle, shopping et Contact. Refonte des menus et ajout de la fonctionnalité de recherche.'
                 },
                 {
-                    id: 2,
+                    id: 4,
                     title: 'Moguo Paris',
                     description: 'Maintenance et amélioration d\'une boutique Shopify pour une marque de mode.',
                     image: 'assets/images/moguo.png',
@@ -170,7 +192,7 @@ const app = Vue.createApp({
                     details: 'Refonte complète de la page d\'accueil de la boutique en ligne PIPPACORNER pour améliorer l\'expérience utilisateur et l\'esthétique du site.'
                 },
                 {
-                    id: 4,
+                    id: 2,
                     title: 'Plateforme de gestion de TFE',
                     description: 'Application web Laravel pour la gestion des Travaux de Fin d\'Étude.',
                     image: 'assets/images/rapports.png',
@@ -181,7 +203,7 @@ const app = Vue.createApp({
                     details: 'Conception, développement et déploiement d\'une plateforme complète pour la gestion des Travaux de Fin d\'Étude à l\'INSTI Lokossa, permettant aux étudiants et aux enseignants de suivre et d\'évaluer les projets de fin d\'études.'
                 },
                 {
-                    id: 5,
+                    id: 1,
                     title: 'Les Semeurs du Royaume',
                     description: 'Application web Symfony pour la recherche de fonds pour les missionnaires.',
                     image: 'https://placehold.co/400x300',
@@ -190,7 +212,8 @@ const app = Vue.createApp({
                     demo: null,
                     github: null,
                     details: 'Préparation des maquettes, élaboration d\'architecture et choix des besoins logiciels et matériels pour le développement d\'une application web destinée à la recherche de fonds pour les missionnaires de l\'ONG Campus pour Christ.'
-                }
+                },
+               
             ],
             currentFilter: 'all',
             projectCategories: ['Web', 'E-commerce'],
