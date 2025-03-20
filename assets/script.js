@@ -230,7 +230,7 @@ const app = Vue.createApp({
     },
     methods: {
         initAnimations() {
-            gsap.utils.toArray('.hero h1, .hero h2, .hero p, .hero-buttons, .timeline-item, .project-card').forEach(el => {
+            gsap.utils.toArray('.hero h1, .hero h2, .hero p, .hero-buttons, .project-card').forEach(el => {
                 gsap.from(el, {
                     y: 30,
                     opacity: 0,
