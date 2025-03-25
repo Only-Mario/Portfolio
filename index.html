@@ -17,7 +17,8 @@
     <meta property="og:title" content="Mario Merveille Ligan | Développeur Fullstack Web & Mobile">
     <meta property="og:description"
         content="Développeur web & mobile expert en création d'applications modernes. Solutions sur mesure avec WordPress, Laravel et Flutter.">
-    <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E03AQERsMf0xtFg1g/profile-displayphoto-shrink_800_800/B4EZWzyvrNGgAc-/0/1742478179698?e=1747872000&v=beta&t=opMwKFqyKPOkmH6ymwdRrjkuQVQcAibLKf5Q6rD7Od4">
+    <meta property="og:image"
+        content="https://media.licdn.com/dms/image/v2/D4E03AQERsMf0xtFg1g/profile-displayphoto-shrink_800_800/B4EZWzyvrNGgAc-/0/1742478179698?e=1747872000&v=beta&t=opMwKFqyKPOkmH6ymwdRrjkuQVQcAibLKf5Q6rD7Od4">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://marioligan.netlify.app/">
@@ -147,7 +148,8 @@
                     <h3>Mario Merveille LIGAN</h3>
                     <p class="about-intro">
                         Je suis un développeur web et mobile passionné, titulaire d'une Licence professionnelle en Génie
-                    Informatique et télécommunications de l'Institut National Supérieur de Technologie Industrielle de Lokossa (INSTI).
+                        Informatique et télécommunications de l'Institut National Supérieur de Technologie Industrielle
+                        de Lokossa (INSTI).
                     </p>
                     <p>
                         Avec une expérience significative dans le développement web et mobile, j'ai travaillé avec des
@@ -481,6 +483,23 @@
             </div>
         </div>
     </div>
+
+    <template>
+        <div>
+            <WhatsAppFloatingButton phone-number="+2290151875012"
+                message="Bonjour, je suis intéressé par votre service." />
+        </div>
+    </template>
+
+    <script>
+        import WhatsAppFloatingButton from 'WhatsAppFloatingButton.vue'
+
+        export default {
+            components: {
+                WhatsAppFloatingButton
+            }
+        }
+    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",

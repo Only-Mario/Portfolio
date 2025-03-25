@@ -1825,3 +1825,23 @@ footer {
     background: #cccccc;
     cursor: not-allowed;
 }
+
+
+.whatsapp-floating-button {
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .whatsapp-floating-button:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+  }
