@@ -15,7 +15,7 @@
     --wa: #25d366;
 
     --grad: linear-gradient(100deg, #38bdf8 0%, #6366f1 45%, #a78bfa 70%, #f59e0b 100%);
-    --grad-btn: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+    --grad-btn: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
 
     --radius-sm: 10px;
     --radius: 16px;
@@ -2261,4 +2261,80 @@ html.theme-transition *::after {
         background: var(--bg);
         box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
     }
+}
+
+/* ===== Version statique (SEO) ===== */
+[hidden] {
+    display: none !important;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Le H1 contient le mot-clé (eyebrow) et l'accroche */
+#hero-title {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    letter-spacing: normal;
+    line-height: 1.2;
+}
+
+#hero-title .hero-eyebrow {
+    display: block;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+#hero-title .hero-title {
+    display: block;
+}
+
+.footer-cta-title {
+    font-size: clamp(2rem, 4.5vw, 3.4rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    color: var(--heading);
+}
+
+.footer-heading {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.quote-card blockquote p {
+    margin: 0;
+}
+
+.photo-badge {
+    margin: 0;
+}
+
+.modal-close {
+    cursor: pointer;
+}
+
+/* Accessibilité : contraste et zones cliquables */
+.skip-link {
+    background: #1d4ed8;
+}
+
+.link-arrow,
+.back-top {
+    min-height: 40px;
+    padding: 0.4rem 0;
 }

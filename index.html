@@ -3,580 +3,710 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
-        // Thème sombre par défaut ; le choix du visiteur est mémorisé
+        // Thème sombre par défaut ; le choix du visiteur est mémorisé (avant affichage, sans flash)
         (function () {
             try {
                 var t = localStorage.getItem('theme');
                 if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
             } catch (e) { }
+            document.documentElement.classList.add('js');
         })();
     </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mario Merveille Ligan | Développeur web &amp; mobile au Bénin – Laravel, Flutter, Vue</title>
-    <meta name="description"
-        content="Développeur fullstack web & mobile au Bénin. Je conçois des sites, boutiques en ligne et applications (Laravel, Flutter, Vue, WordPress, Shopify) qui font vendre. Clients au Bénin, en France et en Belgique.">
+    <title>Développeur web &amp; mobile au Bénin | Mario Merveille Ligan</title>
+    <meta name="description" content="Développeur web &amp; mobile au Bénin : sites, boutiques en ligne et applis (Laravel, Flutter, Vue) qui font vendre. Clients au Bénin, en France et en Belgique.">
     <meta name="author" content="Mario Merveille Ligan">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://marioligan.netlify.app/">
+    <link rel="alternate" hreflang="fr" href="https://marioligan.netlify.app/">
+    <meta name="geo.region" content="BJ-AQ">
+    <meta name="geo.placename" content="Abomey-Calavi">
 
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mario Merveille Ligan">
+    <meta property="og:locale" content="fr_FR">
     <meta property="og:url" content="https://marioligan.netlify.app/">
-    <meta property="og:title" content="Mario Merveille Ligan | Développeur web & mobile">
-    <meta property="og:description"
-        content="Sites, boutiques en ligne et applications mobiles qui font vendre. Laravel, Flutter, Vue, WordPress, Shopify.">
+    <meta property="og:title" content="Mario Merveille Ligan – Développeur web &amp; mobile">
+    <meta property="og:description" content="Sites, boutiques en ligne et applications mobiles qui font vendre. Laravel, Flutter, Vue, WordPress, Shopify.">
     <meta property="og:image" content="https://marioligan.netlify.app/assets/images/og-image.jpg">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="fr_FR">
+    <meta property="og:image:alt" content="Mario Merveille Ligan, développeur fullstack web et mobile">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mario Merveille Ligan | Développeur web & mobile">
-    <meta name="twitter:description"
-        content="Sites, boutiques en ligne et applications mobiles qui font vendre. Laravel, Flutter, Vue, WordPress, Shopify.">
+    <meta name="twitter:title" content="Mario Merveille Ligan – Développeur web &amp; mobile">
+    <meta name="twitter:description" content="Sites, boutiques en ligne et applications mobiles qui font vendre. Laravel, Flutter, Vue, WordPress, Shopify.">
     <meta name="twitter:image" content="https://marioligan.netlify.app/assets/images/og-image.jpg">
+    <meta name="twitter:image:alt" content="Mario Merveille Ligan, développeur fullstack web et mobile">
 
+    <meta name="theme-color" content="#070b14" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#070b14">
-    <link rel="canonical" href="https://marioligan.netlify.app/">
-
-    <link rel="icon" type="image/webp" href="assets/images/logoMario.webp">
-    <link rel="apple-touch-icon" href="assets/images/logoMario.jpg">
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" as="image" href="assets/images/projects/xwespeed.webp" fetchpriority="high">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="assets/style.css">
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.3.4/vue.global.prod.js"></script>
+    <script defer src="assets/app.js"></script>
+    <script defer src="assets/animations.js"></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Person",
+            "@id": "https://marioligan.netlify.app/#mario",
+            "name": "Mario Merveille Ligan",
+            "alternateName": "Mario Ligan",
+            "jobTitle": "Développeur fullstack web & mobile",
+            "url": "https://marioligan.netlify.app/",
+            "image": "https://marioligan.netlify.app/assets/images/profil.webp",
+            "email": "mailto:marioligan41@gmail.com",
+            "telephone": "+2290151875012",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Abomey-Calavi",
+                "addressRegion": "Atlantique",
+                "addressCountry": "BJ"
+            },
+            "alumniOf": {
+                "@type": "CollegeOrUniversity",
+                "name": "Institut National Supérieur de Technologie Industrielle (INSTI) de Lokossa"
+            },
+            "knowsAbout": [
+                "Laravel",
+                "Flutter",
+                "Vue.js",
+                "TypeScript",
+                "WordPress",
+                "Shopify",
+                "Symfony",
+                "PHP",
+                "MySQL",
+                "Développement d'applications mobiles",
+                "E-commerce",
+                "Paiement Mobile Money"
+            ],
+            "knowsLanguage": [
+                "fr",
+                "en"
+            ],
+            "sameAs": [
+                "https://www.linkedin.com/in/ligan-mario-965077218/",
+                "https://github.com/Only-Mario",
+                "https://www.facebook.com/mariomerveille.ligan.9/"
+            ]
+        },
+        {
+            "@type": "ProfessionalService",
+            "@id": "https://marioligan.netlify.app/#service",
+            "name": "Mario Ligan – Développement web & mobile",
+            "url": "https://marioligan.netlify.app/",
+            "image": "https://marioligan.netlify.app/assets/images/og-image.jpg",
+            "telephone": "+2290151875012",
+            "email": "marioligan41@gmail.com",
+            "founder": {
+                "@id": "https://marioligan.netlify.app/#mario"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Abomey-Calavi",
+                "addressCountry": "BJ"
+            },
+            "areaServed": [
+                {
+                    "@type": "Country",
+                    "name": "Bénin"
+                },
+                {
+                    "@type": "Country",
+                    "name": "France"
+                },
+                {
+                    "@type": "Country",
+                    "name": "Belgique"
+                }
+            ],
+            "serviceType": [
+                "Applications web & mobiles sur mesure",
+                "Sites vitrines qui convertissent",
+                "Boutiques en ligne",
+                "Refonte & modernisation",
+                "Maintenance & évolutions"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://marioligan.netlify.app/#site",
+            "url": "https://marioligan.netlify.app/",
+            "name": "Mario Merveille Ligan – Portfolio",
+            "inLanguage": "fr-FR",
+            "publisher": {
+                "@id": "https://marioligan.netlify.app/#mario"
+            }
+        }
+    ]
+}
+    </script>
 </head>
 
 <body>
-    <div id="app" v-cloak>
-        <a class="skip-link" href="#projets">Aller aux réalisations</a>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-        <!-- ================= EN-TÊTE ================= -->
-        <header class="site-header" :class="{ 'is-scrolled': scrolled, 'menu-open': mobileMenuOpen }">
-            <div class="container header-inner">
-                <a href="#accueil" class="brand" @click="closeMenu" aria-label="Mario Ligan, retour à l'accueil">
-                    <img src="assets/images/logoMario.webp" alt="" width="36" height="36">
-                    <span>Mario Ligan</span>
-                </a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#accueil" class="brand" aria-label="Mario Ligan, retour en haut de page">
+                <img src="assets/images/logoMario.webp" alt="" width="36" height="36">
+                <span>Mario Ligan</span>
+            </a>
 
-                <nav class="main-nav" aria-label="Navigation principale">
-                    <ul>
-                        <li v-for="item in menuItems" :key="item.id">
-                            <a :href="'#' + item.id" :class="{ active: activeSection === item.id }"
-                                @click="closeMenu">{{ item.name }}</a>
-                        </li>
+            <nav class="main-nav" id="menu" aria-label="Navigation principale">
+                <ul>
+                        <li><a href="#projets" data-nav="projets">Réalisations</a></li>
+                        <li><a href="#services" data-nav="services">Services</a></li>
+                        <li><a href="#methode" data-nav="methode">Méthode</a></li>
+                        <li><a href="#avis" data-nav="avis">Avis</a></li>
+                        <li><a href="#apropos" data-nav="apropos">À propos</a></li>
+                        <li><a href="#contact" data-nav="contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button type="button" class="icon-btn theme-toggle" aria-label="Passer en mode clair" title="Mode clair">
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                </button>
+                <a href="#contact" class="btn btn-primary btn-sm header-cta">Démarrer un projet</a>
+                <button type="button" class="icon-btn menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Ouvrir le menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        <div class="scroll-progress" aria-hidden="true"></div>
+    </header>
+
+    <main id="contenu">
+        <!-- ================= HERO ================= -->
+        <section id="accueil" class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-grid"></div>
+                <div class="hero-glow g1"></div>
+                <div class="hero-glow g2"></div>
+            </div>
+
+            <div class="container hero-inner">
+                <div class="hero-copy">
+                    <p class="availability"><span class="dot" aria-hidden="true"></span> Disponible pour de nouveaux projets</p>
+                    <h1 id="hero-title">
+                        <span class="hero-eyebrow">Mario Merveille Ligan · Développeur web &amp; mobile au Bénin</span>
+                        <span class="hero-title">Des sites et des applis qui <span class="gradient-text">font vendre.</span></span>
+                    </h1>
+                    <p class="hero-lead">Je conçois et développe vos sites, boutiques en ligne et applications mobiles : rapides, soignés et pensés pour transformer vos visiteurs en clients.</p>
+
+                    <div class="hero-ctas">
+                        <a href="#contact" class="btn btn-primary btn-lg magnetic">Démarrer un projet <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="#projets" class="btn btn-ghost btn-lg"><i class="fa-regular fa-eye" aria-hidden="true"></i> Voir mes réalisations</a>
+                    </div>
+
+                    <ul class="hero-proof">
+                        <li><strong class="count" data-years>4+</strong><span>ans d'expérience</span></li>
+                        <li><strong class="count">8</strong><span>projets réalisés</span></li>
+                        <li><strong class="count">3</strong><span>pays clients</span></li>
                     </ul>
-                </nav>
+                </div>
 
-                <div class="header-actions">
-                    <button type="button" class="icon-btn theme-toggle" @click="toggleTheme"
-                        :aria-label="theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'"
-                        :title="theme === 'dark' ? 'Mode clair' : 'Mode sombre'">
-                        <i :class="theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
-                    </button>
-                    <a href="#contact" class="btn btn-primary btn-sm header-cta">Démarrer un projet</a>
-                    <button type="button" class="icon-btn menu-toggle" @click="toggleMobileMenu"
-                        :aria-expanded="mobileMenuOpen ? 'true' : 'false'" aria-label="Menu">
-                        <i :class="mobileMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
-                    </button>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="stack">
+                        <figure class="frame f1"><div class="frame-bar"><i></i><i></i><i></i><span>xwespeed</span></div><img src="assets/images/projects/xwespeed.webp" alt="" width="800" height="450" fetchpriority="high"></figure>
+                        <figure class="frame f2"><div class="frame-bar"><i></i><i></i><i></i><span>aligbonon</span></div><img src="assets/images/projects/aligbonon.webp" alt="" width="800" height="405"></figure>
+                        <figure class="frame f3"><div class="frame-bar"><i></i><i></i><i></i><span>rapports.insti</span></div><img src="assets/images/projects/rapports.webp" alt="" width="800" height="450"></figure>
+                        <div class="chip-float c1"><i class="fa-brands fa-laravel"></i> API Laravel</div>
+                        <div class="chip-float c2"><i class="fa-solid fa-mobile-screen"></i> Flutter iOS &amp; Android</div>
+                        <div class="chip-float c3"><i class="fa-solid fa-wallet"></i> Mobile Money</div>
+                    </div>
                 </div>
             </div>
-            <div class="scroll-progress" aria-hidden="true"></div>
-        </header>
 
-        <main>
-            <!-- ================= HERO ================= -->
-            <section id="accueil" class="hero">
-                <div class="hero-bg" aria-hidden="true">
-                    <div class="hero-grid"></div>
-                    <div class="hero-glow g1"></div>
-                    <div class="hero-glow g2"></div>
+            <a href="#projets" class="scroll-cue" aria-label="Descendre vers les réalisations"><span></span></a>
+        </section>
+
+        <!-- ================= CLIENTS ================= -->
+        <section class="logos" aria-label="Clients et projets">
+            <p class="logos-title">Ils m'ont confié leur projet</p>
+            <div class="marquee">
+                <div class="marquee-track">
+                    <ul><li>XWE Speed</li><li>Aligbonon</li><li>Kinetik Paris</li><li>Moguo Paris</li><li>NEO ANIMALIA</li><li>Les Sens de Capucine</li><li>PIPPACORNER</li><li>INSTI Lokossa</li><li>Trois Ventes Services</li><li>Campus pour Christ</li></ul>
+                    <ul aria-hidden="true"><li>XWE Speed</li><li>Aligbonon</li><li>Kinetik Paris</li><li>Moguo Paris</li><li>NEO ANIMALIA</li><li>Les Sens de Capucine</li><li>PIPPACORNER</li><li>INSTI Lokossa</li><li>Trois Ventes Services</li><li>Campus pour Christ</li></ul>
                 </div>
+            </div>
+        </section>
 
-                <div class="container hero-inner">
-                    <div class="hero-copy">
-                        <p class="availability"><span class="dot"></span> Disponible pour de nouveaux projets</p>
-                        <p class="hero-eyebrow">Mario Merveille Ligan · Développeur fullstack web &amp; mobile</p>
-                        <h1 class="hero-title">Des sites et des applis qui <span class="gradient-text">font
-                                vendre.</span></h1>
-                        <p class="hero-lead">Je conçois et développe vos sites, boutiques en ligne et applications
-                            mobiles : rapides, soignés et pensés pour transformer vos visiteurs en clients.</p>
+        <!-- ================= RÉALISATIONS ================= -->
+        <section id="projets" class="section" aria-labelledby="projets-title">
+            <div class="container">
+                <header class="section-head">
+                    <p class="kicker">Réalisations</p>
+                    <h2 class="section-title" id="projets-title">Des projets concrets, en ligne, qui servent de vrais utilisateurs.</h2>
+                    <p class="section-sub">Applications, plateformes et boutiques pour des clients au Bénin, en France et en Belgique.</p>
+                </header>
 
-                        <div class="hero-ctas">
-                            <a href="#contact" class="btn btn-primary btn-lg magnetic">
-                                Démarrer un projet <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                            <a href="#projets" class="btn btn-ghost btn-lg">
-                                <i class="fa-regular fa-eye"></i> Voir mes réalisations
-                            </a>
+                <div class="featured">
+                    <article class="feature-card spotlight" id="projet-xwe-speed">
+                        <a class="feature-media" href="http://xwespeed.1gb.ru/" target="_blank" rel="noopener" aria-label="Voir XWE Speed en ligne (nouvel onglet)">
+                            <div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>xwespeed.1gb.ru</span></div><img src="assets/images/projects/xwespeed.webp" alt="Aperçu de la plateforme XWE Speed" width="800" height="450" loading="lazy" decoding="async"></div>
+                        </a>
+                        <div class="feature-body">
+                            <div class="meta-row">
+                                <span class="status-pill"><span class="dot" aria-hidden="true"></span> En cours de développement</span>
+                                <span class="meta">Application mobile &amp; web · Bénin</span>
+                            </div>
+                            <h3>XWE Speed</h3>
+                            <p class="feature-tagline">La plateforme immobilière qui permet de louer, acheter, faire construire ou régler ses formalités foncières au Bénin, avec des annonces vérifiées.</p>
+                            <ul class="check-list"><li><i class="fa-solid fa-check" aria-hidden="true"></i> Appli Flutter iOS &amp; Android + site web</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Paiement Mobile Money (Kkiapay)</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Connexion par code OTP email et WhatsApp</li></ul>
+                            <div class="tags"><span class="tag">Flutter</span><span class="tag">Laravel 13</span><span class="tag">MySQL</span><span class="tag">Kkiapay</span></div>
+                            <div class="card-actions">
+                                <a href="http://xwespeed.1gb.ru/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Voir en ligne <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                <button type="button" class="btn btn-ghost btn-sm" data-case="xwe-speed">Étude de cas</button>
+                            </div>
                         </div>
-
-                        <ul class="hero-proof">
-                            <li><strong class="count">{{ experienceYears }}+</strong><span>ans d'expérience</span></li>
-                            <li><strong class="count">{{ allProjects.length }}</strong><span>projets réalisés</span></li>
-                            <li><strong class="count">3</strong><span>pays clients</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="hero-visual" aria-hidden="true">
-                        <div class="stack">
-                            <figure class="frame f1">
-                                <div class="frame-bar"><i></i><i></i><i></i><span>xwespeed</span></div>
-                                <img src="assets/images/projects/xwespeed.webp" alt="" width="800" height="450">
-                            </figure>
-                            <figure class="frame f2">
-                                <div class="frame-bar"><i></i><i></i><i></i><span>aligbonon</span></div>
-                                <img src="assets/images/projects/aligbonon.webp" alt="" width="800" height="405">
-                            </figure>
-                            <figure class="frame f3">
-                                <div class="frame-bar"><i></i><i></i><i></i><span>rapports.insti</span></div>
-                                <img src="assets/images/projects/rapports.webp" alt="" width="800" height="450">
-                            </figure>
-                            <div class="chip-float c1"><i class="fa-brands fa-laravel"></i> API Laravel</div>
-                            <div class="chip-float c2"><i class="fa-solid fa-mobile-screen"></i> Flutter iOS &amp;
-                                Android</div>
-                            <div class="chip-float c3"><i class="fa-solid fa-wallet"></i> Mobile Money</div>
+                    </article>
+                    <article class="feature-card spotlight reverse" id="projet-aligbonon-acoustic-production">
+                        <a class="feature-media" href="https://aligbonon-frotend.netlify.app/" target="_blank" rel="noopener" aria-label="Voir Aligbonon Acoustic &amp; Production en ligne (nouvel onglet)">
+                            <div class="frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>aligbonon</span></div><img src="assets/images/projects/aligbonon.webp" alt="Aperçu de la plateforme Aligbonon Acoustic &amp; Production" width="800" height="405" loading="lazy" decoding="async"></div>
+                        </a>
+                        <div class="feature-body">
+                            <div class="meta-row">
+                                <span class="status-pill"><span class="dot" aria-hidden="true"></span> En cours de développement</span>
+                                <span class="meta">Plateforme web · Bénin</span>
+                            </div>
+                            <h3>Aligbonon Acoustic &amp; Production</h3>
+                            <p class="feature-tagline">La plateforme de formation aux métiers du son, du cinéma et de la télévision, avec sa propre chaîne de streaming : Aligbonon TV.</p>
+                            <ul class="check-list"><li><i class="fa-solid fa-check" aria-hidden="true"></i> Espace étudiant : cours, quiz et progression</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Aligbonon TV : streaming par catégories</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Back-office : inscriptions, paiements, statistiques</li></ul>
+                            <div class="tags"><span class="tag">Vue 3</span><span class="tag">TypeScript</span><span class="tag">Laravel 13</span><span class="tag">Tailwind</span></div>
+                            <div class="card-actions">
+                                <a href="https://aligbonon-frotend.netlify.app/" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Voir en ligne <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                <button type="button" class="btn btn-ghost btn-sm" data-case="aligbonon-acoustic-production">Étude de cas</button>
+                            </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
 
-                <a href="#projets" class="scroll-cue" aria-label="Descendre vers les réalisations"><span></span></a>
-            </section>
+                <div class="filters" role="group" aria-label="Filtrer les réalisations"><button type="button" class="filter active" data-filter="all" aria-pressed="true">Tout</button><button type="button" class="filter" data-filter="Web" aria-pressed="false">Sites &amp; plateformes</button><button type="button" class="filter" data-filter="E-commerce" aria-pressed="false">E-commerce</button></div>
 
-            <!-- ================= CLIENTS ================= -->
-            <section class="logos" aria-label="Clients et projets">
-                <p class="logos-title">Ils m'ont confié leur projet</p>
-                <div class="marquee">
-                    <div class="marquee-track">
-                        <ul>
-                            <li v-for="client in clients" :key="client">{{ client }}</li>
-                        </ul>
-                        <ul aria-hidden="true">
-                            <li v-for="client in clients" :key="'b-' + client">{{ client }}</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ================= RÉALISATIONS ================= -->
-            <section id="projets" class="section">
-                <div class="container">
-                    <header class="section-head">
-                        <p class="kicker">Réalisations</p>
-                        <h2 class="section-title">Des projets concrets, en ligne, qui servent de vrais utilisateurs.
-                        </h2>
-                        <p class="section-sub">Applications, plateformes et boutiques pour des clients au Bénin, en
-                            France et en Belgique.</p>
-                    </header>
-
-                    <!-- Projets à la une (en cours) -->
-                    <div class="featured">
-                        <article class="feature-card spotlight" v-for="(project, i) in featuredProjects"
-                            :key="project.id" :class="{ reverse: i % 2 === 1 }">
-                            <a class="feature-media" :href="project.demo" target="_blank" rel="noopener"
-                                :aria-label="'Voir ' + project.title + ' en ligne'">
-                                <div class="frame">
-                                    <div class="frame-bar"><i></i><i></i><i></i><span>{{ project.domain }}</span>
-                                    </div>
-                                    <img :src="project.image" :alt="'Aperçu de ' + project.title" loading="lazy"
-                                        decoding="async" width="800" height="450">
-                                </div>
-                            </a>
-                            <div class="feature-body">
-                                <div class="meta-row">
-                                    <span class="status-pill"><span class="dot"></span> {{ project.status }}</span>
-                                    <span class="meta">{{ project.categoryLabel }} · {{ project.client }}</span>
-                                </div>
-                                <h3>{{ project.title }}</h3>
-                                <p class="feature-tagline">{{ project.tagline }}</p>
-                                <ul class="check-list">
-                                    <li v-for="item in project.highlights" :key="item"><i
-                                            class="fa-solid fa-check"></i> {{ item }}</li>
-                                </ul>
-                                <div class="tags">
-                                    <span class="tag" v-for="tag in project.tags" :key="tag">{{ tag }}</span>
-                                </div>
-                                <div class="card-actions">
-                                    <a :href="project.demo" class="btn btn-primary btn-sm" target="_blank"
-                                        rel="noopener" v-if="project.demo">Voir en ligne <i
-                                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                                    <button type="button" class="btn btn-ghost btn-sm"
-                                        @click="openProjectModal(project)">Étude de cas</button>
-                                </div>
+                <div class="project-grid">
+                    <article class="project-card spotlight" data-category="E-commerce" id="projet-kinetik-paris">
+                        <button type="button" class="project-media" data-case="kinetik-paris" aria-label="Étude de cas : kinetik Paris">
+                            <img src="assets/images/projects/kinetik.webp" alt="Aperçu du projet kinetik Paris" loading="lazy" decoding="async" width="960" height="483">
+                            <span class="media-hint" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="project-body">
+                            <p class="meta">E-commerce</p>
+                            <h3>kinetik Paris</h3>
+                            <p>Maintenance et amélioration d'une boutique Shopify pour vêtements dédiés au running et au trail.</p>
+                            <div class="tags"><span class="tag">Shopify</span><span class="tag">JavaScript</span><span class="tag">Liquid</span></div>
+                            <div class="project-links">
+                                <button type="button" class="link-arrow" data-case="kinetik-paris">Étude de cas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                                <a href="https://kinetikadrenalink.com/" target="_blank" rel="noopener" class="icon-link" aria-label="Voir kinetik Paris en ligne (nouvel onglet)"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                
                             </div>
-                        </article>
-                    </div>
-
-                    <!-- Autres réalisations -->
-                    <div class="filters" role="tablist" aria-label="Filtrer les réalisations">
-                        <button type="button" class="filter" role="tab" v-for="f in filters" :key="f.value"
-                            :class="{ active: currentFilter === f.value }"
-                            :aria-selected="currentFilter === f.value ? 'true' : 'false'"
-                            @click="currentFilter = f.value">{{ f.label }}</button>
-                    </div>
-
-                    <div class="project-grid">
-                        <article class="project-card spotlight" v-for="project in filteredProjects"
-                            :key="project.id">
-                            <button type="button" class="project-media" @click="openProjectModal(project)"
-                                :aria-label="'Détails du projet ' + project.title">
-                                <img v-if="project.image" :src="project.image" :alt="'Aperçu de ' + project.title"
-                                    loading="lazy" decoding="async" width="800" height="450">
-                                <div v-else class="media-placeholder">
-                                    <i :class="project.icon || 'fa-solid fa-code'"></i>
-                                </div>
-                                <span class="media-hint"><i class="fa-solid fa-plus"></i></span>
-                            </button>
-                            <div class="project-body">
-                                <p class="meta">{{ project.categoryLabel }}<template v-if="project.client"> · {{
-                                        project.client }}</template></p>
-                                <h3>{{ project.title }}</h3>
-                                <p>{{ project.description }}</p>
-                                <div class="tags">
-                                    <span class="tag" v-for="tag in project.tags" :key="tag">{{ tag }}</span>
-                                </div>
-                                <div class="project-links">
-                                    <button type="button" class="link-arrow" @click="openProjectModal(project)">Étude
-                                        de cas <i class="fa-solid fa-arrow-right"></i></button>
-                                    <a v-if="project.demo" :href="project.demo" target="_blank" rel="noopener"
-                                        class="icon-link" :aria-label="'Voir ' + project.title + ' en ligne'"><i
-                                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                                    <a v-if="project.github" :href="project.github" target="_blank" rel="noopener"
-                                        class="icon-link" :aria-label="'Code source de ' + project.title"><i
-                                            class="fa-brands fa-github"></i></a>
-                                </div>
+                        </div>
+                    </article>
+                    <article class="project-card spotlight" data-category="Web" id="projet-neo-animalia">
+                        <button type="button" class="project-media" data-case="neo-animalia" aria-label="Étude de cas : NEO ANIMALIA">
+                            <img src="assets/images/projects/neoanimalia.webp" alt="Aperçu du projet NEO ANIMALIA" loading="lazy" decoding="async" width="800" height="450">
+                            <span class="media-hint" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="project-body">
+                            <p class="meta">Site &amp; plateforme · Belgique</p>
+                            <h3>NEO ANIMALIA</h3>
+                            <p>Refonte du site de NEO ANIMALIA, organisme belge de formation continue pour vétérinaires (110 journées de formation par an).</p>
+                            <div class="tags"><span class="tag">Bootstrap</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+                            <div class="project-links">
+                                <button type="button" class="link-arrow" data-case="neo-animalia">Étude de cas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                                <a href="https://neoanimalia.be/" target="_blank" rel="noopener" class="icon-link" aria-label="Voir NEO ANIMALIA en ligne (nouvel onglet)"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                
                             </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ================= SERVICES ================= -->
-            <section id="services" class="section section-alt">
-                <div class="container">
-                    <header class="section-head">
-                        <p class="kicker">Services</p>
-                        <h2 class="section-title">Ce que je peux construire pour vous.</h2>
-                        <p class="section-sub">Un seul interlocuteur, du design à la mise en ligne. Vous gagnez du
-                            temps, je m'occupe de la technique.</p>
-                    </header>
-
-                    <div class="bento">
-                        <article class="bento-card spotlight" v-for="(service, i) in services" :key="service.title"
-                            :class="'b' + (i + 1)">
-                            <div class="bento-icon"><i :class="service.icon"></i></div>
-                            <h3>{{ service.title }}</h3>
-                            <p>{{ service.description }}</p>
-                            <ul class="check-list compact">
-                                <li v-for="feature in service.features" :key="feature"><i
-                                        class="fa-solid fa-check"></i> {{ feature }}</li>
-                            </ul>
-                            <div class="tags" v-if="service.stack">
-                                <span class="tag" v-for="tech in service.stack" :key="tech">{{ tech }}</span>
+                        </div>
+                    </article>
+                    <article class="project-card spotlight" data-category="Web" id="projet-les-sens-de-capucine">
+                        <button type="button" class="project-media" data-case="les-sens-de-capucine" aria-label="Étude de cas : Les sens de capucine">
+                            <img src="assets/images/projects/capucine.webp" alt="Aperçu du projet Les sens de capucine" loading="lazy" decoding="async" width="800" height="405">
+                            <span class="media-hint" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="project-body">
+                            <p class="meta">Site &amp; plateforme · France</p>
+                            <h3>Les sens de capucine</h3>
+                            <p>Refonte complète d'un blog WordPress beauté, mode et lifestyle actif depuis 2012, avec une recherche optimisée.</p>
+                            <div class="tags"><span class="tag">WordPress</span><span class="tag">PHP</span><span class="tag">CSS3</span></div>
+                            <div class="project-links">
+                                <button type="button" class="link-arrow" data-case="les-sens-de-capucine">Étude de cas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                                <a href="https://lessensdecapucine.com/" target="_blank" rel="noopener" class="icon-link" aria-label="Voir Les sens de capucine en ligne (nouvel onglet)"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                
                             </div>
-                        </article>
-                    </div>
+                        </div>
+                    </article>
+                    <article class="project-card spotlight" data-category="E-commerce" id="projet-moguo-paris">
+                        <button type="button" class="project-media" data-case="moguo-paris" aria-label="Étude de cas : Moguo Paris">
+                            <img src="assets/images/projects/moguo.webp" alt="Aperçu du projet Moguo Paris" loading="lazy" decoding="async" width="960" height="516">
+                            <span class="media-hint" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="project-body">
+                            <p class="meta">E-commerce</p>
+                            <h3>Moguo Paris</h3>
+                            <p>Maintenance et amélioration d'une boutique Shopify pour une marque de mode.</p>
+                            <div class="tags"><span class="tag">Shopify</span><span class="tag">JavaScript</span><span class="tag">Liquid</span></div>
+                            <div class="project-links">
+                                <button type="button" class="link-arrow" data-case="moguo-paris">Étude de cas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                                <a href="https://moguoparis.fr/" target="_blank" rel="noopener" class="icon-link" aria-label="Voir Moguo Paris en ligne (nouvel onglet)"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card spotlight" data-category="E-commerce" id="projet-pippacorner">
+                        <button type="button" class="project-media" data-case="pippacorner" aria-label="Étude de cas : PIPPACORNER">
+                            <img src="assets/images/projects/pippacorner.webp" alt="Aperçu du projet PIPPACORNER" loading="lazy" decoding="async" width="960" height="516">
+                            <span class="media-hint" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="project-body">
+                            <p class="meta">E-commerce</p>
+                            <h3>PIPPACORNER</h3>
+                            <p>Refonte de la page d'accueil d'un site e-commerce basé sur le CMS PIXFIZZ.</p>
+                            <div class="tags"><span class="tag">PixFizz</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                            <div class="project-links">
+                                <button type="button" class="link-arrow" data-case="pippacorner">Étude de cas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                                <a href="https://pippacorner.pixfizz.com/" target="_blank" rel="noopener" class="icon-link" aria-label="Voir PIPPACORNER en ligne (nouvel onglet)"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card spotlight" data-category="Web" id="projet-plateforme-de-gestion-de-tfe">
+                        <button type="button" class="project-media" data-case="plateforme-de-gestion-de-tfe" aria-label="Étude de cas : Plateforme de gestion de TFE">
+                            <img src="assets/images/projects/rapports.webp" alt="Aperçu du projet Plateforme de gestion de TFE" loading="lazy" decoding="async" width="800" height="450">
+                            <span class="media-hint" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="project-body">
+                            <p class="meta">Site &amp; plateforme · Bénin</p>
+                            <h3>Plateforme de gestion de TFE</h3>
+                            <p>Plateforme Laravel de l'INSTI Lokossa : près de 1 000 rapports et mémoires consultables par filière, niveau et année.</p>
+                            <div class="tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span></div>
+                            <div class="project-links">
+                                <button type="button" class="link-arrow" data-case="plateforme-de-gestion-de-tfe">Étude de cas <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                                <a href="https://rapports.insti.edu.bj/" target="_blank" rel="noopener" class="icon-link" aria-label="Voir Plateforme de gestion de TFE en ligne (nouvel onglet)"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                                <a href="https://github.com/Only-Mario/Gestion_de_tfe-laravel-" target="_blank" rel="noopener" class="icon-link" aria-label="Code source de Plateforme de gestion de TFE sur GitHub (nouvel onglet)"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- ================= MÉTHODE ================= -->
-            <section id="methode" class="section">
-                <div class="container">
-                    <header class="section-head">
-                        <p class="kicker">Méthode</p>
-                        <h2 class="section-title">Un projet clair, de la première idée au premier client.</h2>
-                        <p class="section-sub">Vous savez toujours où on en est, ce qui est fait et ce qui arrive.</p>
-                    </header>
+        <!-- ================= SERVICES ================= -->
+        <section id="services" class="section section-alt" aria-labelledby="services-title">
+            <div class="container">
+                <header class="section-head">
+                    <p class="kicker">Services</p>
+                    <h2 class="section-title" id="services-title">Ce que je peux construire pour vous.</h2>
+                    <p class="section-sub">Un seul interlocuteur, du design à la mise en ligne. Vous gagnez du temps, je m'occupe de la technique.</p>
+                </header>
+                <div class="bento">
+                    <article class="bento-card spotlight b1">
+                        <div class="bento-icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></div>
+                        <h3>Applications web &amp; mobiles sur mesure</h3>
+                        <p>Plateformes, espaces clients, applis iOS &amp; Android : un produit solide, pensé pour vos utilisateurs et prêt à grandir.</p>
+                        <ul class="check-list compact"><li><i class="fa-solid fa-check" aria-hidden="true"></i> Application Flutter iOS &amp; Android</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> API et back-office Laravel</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Paiement Mobile Money et carte</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Connexion sécurisée (OTP, comptes)</li></ul>
+                        <div class="tags"><span class="tag">Flutter</span><span class="tag">Laravel</span><span class="tag">Vue 3</span><span class="tag">MySQL</span></div>
+                    </article>
+                    <article class="bento-card spotlight b2">
+                        <div class="bento-icon" aria-hidden="true"><i class="fa-solid fa-display"></i></div>
+                        <h3>Sites vitrines qui convertissent</h3>
+                        <p>Un site rapide, beau et bien référencé, qui donne confiance et transforme les visiteurs en demandes.</p>
+                        <ul class="check-list compact"><li><i class="fa-solid fa-check" aria-hidden="true"></i> Design moderne et responsive</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Référencement Google de base</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Bouton WhatsApp et formulaires</li></ul>
+                        
+                    </article>
+                    <article class="bento-card spotlight b3">
+                        <div class="bento-icon" aria-hidden="true"><i class="fa-solid fa-bag-shopping"></i></div>
+                        <h3>Boutiques en ligne</h3>
+                        <p>Vendez 24 h/24 avec une boutique simple à gérer et des fiches produits qui donnent envie d'acheter.</p>
+                        <ul class="check-list compact"><li><i class="fa-solid fa-check" aria-hidden="true"></i> Shopify ou WordPress</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Mobile Money et carte bancaire</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Gestion des commandes</li></ul>
+                        
+                    </article>
+                    <article class="bento-card spotlight b4">
+                        <div class="bento-icon" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>Refonte &amp; modernisation</h3>
+                        <p>Votre site date ? Je le modernise sans perdre vos contenus ni votre référencement.</p>
+                        <ul class="check-list compact"><li><i class="fa-solid fa-check" aria-hidden="true"></i> Audit de l'existant</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Nouveau design</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Migration des contenus</li></ul>
+                        
+                    </article>
+                    <article class="bento-card spotlight b5">
+                        <div class="bento-icon" aria-hidden="true"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Maintenance &amp; évolutions</h3>
+                        <p>Mises à jour, sécurité, corrections et nouvelles fonctionnalités : votre site reste rapide et fiable.</p>
+                        <ul class="check-list compact"><li><i class="fa-solid fa-check" aria-hidden="true"></i> Mises à jour de sécurité</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Corrections de bugs</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Nouvelles fonctionnalités</li></ul>
+                        
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                    <div class="process">
-                        <div class="process-line" aria-hidden="true"><span class="process-line-fill"></span></div>
-                        <ol class="process-steps">
-                            <li class="step" v-for="(step, index) in processSteps" :key="step.title">
-                                <div class="step-node"><i :class="step.icon"></i></div>
-                                <p class="step-num">Étape {{ index + 1 }}</p>
-                                <h3>{{ step.title }}</h3>
-                                <p>{{ step.text }}</p>
+        <!-- ================= MÉTHODE ================= -->
+        <section id="methode" class="section" aria-labelledby="methode-title">
+            <div class="container">
+                <header class="section-head">
+                    <p class="kicker">Méthode</p>
+                    <h2 class="section-title" id="methode-title">Un projet clair, de la première idée au premier client.</h2>
+                    <p class="section-sub">Vous savez toujours où on en est, ce qui est fait et ce qui arrive.</p>
+                </header>
+                <div class="process">
+                    <div class="process-line" aria-hidden="true"><span class="process-line-fill"></span></div>
+                    <ol class="process-steps">
+                            <li class="step">
+                                <div class="step-node" aria-hidden="true"><i class="fa-solid fa-comments"></i></div>
+                                <p class="step-num">Étape 1</p>
+                                <h3>Échange</h3>
+                                <p>On clarifie vos objectifs, votre cible et votre budget. Vous recevez une proposition claire.</p>
                             </li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ================= TÉMOIGNAGES ================= -->
-            <section id="avis" class="section section-alt">
-                <div class="container">
-                    <header class="section-head">
-                        <p class="kicker">Témoignages</p>
-                        <h2 class="section-title">Ils en parlent mieux que moi.</h2>
-                    </header>
-
-                    <div class="testimonials">
-                        <figure class="quote-card spotlight" v-for="t in testimonials" :key="t.name">
-                            <i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i>
-                            <blockquote>{{ t.content }}</blockquote>
-                            <figcaption>
-                                <img :src="t.avatar" :alt="t.name" width="48" height="48" loading="lazy">
-                                <div>
-                                    <strong>{{ t.name }}</strong>
-                                    <span>{{ t.position }} · {{ t.company }}</span>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ================= À PROPOS + PARCOURS ================= -->
-            <section id="apropos" class="section">
-                <div class="container about">
-                    <div class="about-photo">
-                        <img src="assets/images/profil.webp" alt="Mario Merveille Ligan, développeur web et mobile"
-                            width="700" height="956" loading="lazy" decoding="async">
-                        <div class="photo-badge">
-                            <i class="fa-solid fa-location-dot"></i> Abomey-Calavi, Bénin
-                        </div>
-                    </div>
-
-                    <div class="about-copy">
-                        <p class="kicker">À propos</p>
-                        <h2 class="section-title left">Un développeur qui pense produit, pas seulement code.</h2>
-                        <p>Je suis Mario Merveille Ligan, développeur fullstack web &amp; mobile, diplômé de l'INSTI
-                            Lokossa (Licence en informatique et télécommunications). Depuis {{ experienceStart }}, je
-                            construis des sites, des boutiques et des applications pour des entreprises au Bénin, en
-                            France et en Belgique.</p>
-                        <p>Ma force : maîtriser toute la chaîne, de l'interface à l'API et au paiement Mobile Money,
-                            pour livrer des produits qui fonctionnent vraiment, et qui rapportent.</p>
-
-                        <div class="skills">
-                            <div class="skill-group" v-for="group in skillCategories" :key="group.name">
-                                <h3>{{ group.name }}</h3>
-                                <div class="tags">
-                                    <span class="tag tag-icon" v-for="skill in group.skills" :key="skill.name">
-                                        <i :class="skill.icon"></i> {{ skill.name }}
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="about-ctas">
-                            <a href="assets/cv/LIGAN-M_Merveille-CV.pdf" class="btn btn-primary" download="Mario_Ligan_CV.pdf">
-                                <i class="fa-solid fa-download"></i> Télécharger mon CV
-                            </a>
-                            <a href="https://www.linkedin.com/in/ligan-mario-965077218/" target="_blank"
-                                rel="noopener" class="btn btn-ghost">
-                                <i class="fa-brands fa-linkedin-in"></i> LinkedIn
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container" id="parcours">
-                    <h3 class="sub-title">Parcours</h3>
-                    <ol class="journey">
-                        <li class="journey-item" v-for="item in timeline" :key="item.company + item.period">
-                            <span class="journey-period">{{ item.period }}</span>
-                            <div class="journey-card">
-                                <div class="journey-head">
-                                    <h4>{{ item.role }}</h4>
-                                    <span class="journey-company">{{ item.company }}</span>
-                                </div>
-                                <p>{{ item.description }}</p>
-                            </div>
-                        </li>
+                            <li class="step">
+                                <div class="step-node" aria-hidden="true"><i class="fa-solid fa-pen-ruler"></i></div>
+                                <p class="step-num">Étape 2</p>
+                                <h3>Maquette</h3>
+                                <p>Je conçois le parcours et le design. Vous validez avant la moindre ligne de code.</p>
+                            </li>
+                            <li class="step">
+                                <div class="step-node" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
+                                <p class="step-num">Étape 3</p>
+                                <h3>Développement</h3>
+                                <p>Je développe et vous montre l'avancement régulièrement, sur une version en ligne.</p>
+                            </li>
+                            <li class="step">
+                                <div class="step-node" aria-hidden="true"><i class="fa-solid fa-rocket"></i></div>
+                                <p class="step-num">Étape 4</p>
+                                <h3>Lancement &amp; suivi</h3>
+                                <p>Mise en ligne, prise en main, puis maintenance et évolutions si vous le souhaitez.</p>
+                            </li>
                     </ol>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- ================= CONTACT ================= -->
-            <section id="contact" class="section contact">
-                <div class="container contact-inner">
-                    <div class="contact-copy">
-                        <p class="kicker">Contact</p>
-                        <h2 class="section-title left">Parlons de votre projet.</h2>
-                        <p class="section-sub left">Décrivez votre besoin en quelques lignes. Je vous réponds avec une
-                            première proposition claire, sans engagement.</p>
-
-                        <div class="contact-cards">
-                            <a class="contact-card whatsapp" :href="whatsappLink" target="_blank" rel="noopener">
-                                <i class="fa-brands fa-whatsapp"></i>
-                                <div><strong>WhatsApp</strong><span>Le plus rapide</span></div>
-                                <i class="fa-solid fa-arrow-right go"></i>
-                            </a>
-                            <a class="contact-card" href="mailto:marioligan41@gmail.com">
-                                <i class="fa-solid fa-envelope"></i>
-                                <div><strong>marioligan41@gmail.com</strong><span>Email</span></div>
-                                <i class="fa-solid fa-arrow-right go"></i>
-                            </a>
-                            <a class="contact-card" href="tel:+2290151875012">
-                                <i class="fa-solid fa-phone"></i>
-                                <div><strong>+229 01 51 87 50 12</strong><span>Téléphone</span></div>
-                                <i class="fa-solid fa-arrow-right go"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <form id="contact-form" class="contact-form spotlight" @submit.prevent="handleSubmit" novalidate>
-                        <div class="field-row">
-                            <label class="field">
-                                <span>Nom</span>
-                                <input type="text" name="from_name" autocomplete="name" required
-                                    placeholder="Votre nom">
-                            </label>
-                            <label class="field">
-                                <span>Email</span>
-                                <input type="email" name="from_email" autocomplete="email" required
-                                    placeholder="vous@exemple.com">
-                            </label>
-                        </div>
-                        <label class="field">
-                            <span>Sujet</span>
-                            <input type="text" name="subject" required placeholder="Site, boutique, application…">
-                        </label>
-                        <label class="field">
-                            <span>Votre projet</span>
-                            <textarea name="message" rows="5" required
-                                placeholder="Objectif, délais, budget approximatif…"></textarea>
-                        </label>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block" :disabled="loading">
-                            <span v-if="!loading">Envoyer le message <i class="fa-solid fa-paper-plane"></i></span>
-                            <span v-else>Envoi en cours…</span>
-                        </button>
-                        <p class="form-status" v-if="statusMessage" role="status">{{ statusMessage }}</p>
-                    </form>
-                </div>
-            </section>
-        </main>
-
-        <!-- ================= PIED DE PAGE ================= -->
-        <footer class="site-footer">
+        <!-- ================= TÉMOIGNAGES ================= -->
+        <section id="avis" class="section section-alt" aria-labelledby="avis-title">
             <div class="container">
-                <div class="footer-cta">
-                    <h2>Un projet en tête ?</h2>
-                    <a href="#contact" class="btn btn-primary btn-lg">Démarrer un projet <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </div>
-
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        <a href="#accueil" class="brand">
-                            <img src="assets/images/logoMario.webp" alt="" width="36" height="36">
-                            <span>Mario Ligan</span>
-                        </a>
-                        <p>Développeur fullstack web &amp; mobile. Sites, boutiques en ligne et applications qui font
-                            vendre, depuis le Bénin.</p>
-                    </div>
-                    <nav class="footer-nav" aria-label="Pied de page">
-                        <h3>Navigation</h3>
-                        <ul>
-                            <li v-for="item in menuItems" :key="'f-' + item.id"><a :href="'#' + item.id">{{ item.name
-                                    }}</a></li>
-                        </ul>
-                    </nav>
-                    <div class="footer-social">
-                        <h3>Me suivre</h3>
-                        <ul class="social-list">
-                            <li v-for="s in socials" :key="s.label">
-                                <a :href="s.url" target="_blank" rel="noopener noreferrer">
-                                    <i :class="s.icon"></i>
-                                    <span>{{ s.label }}</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="footer-bottom">
-                    <p>&copy; {{ currentYear }} Mario Merveille Ligan. Tous droits réservés.</p>
-                    <a href="#accueil" class="back-top">Haut de page <i class="fa-solid fa-arrow-up"></i></a>
+                <header class="section-head">
+                    <p class="kicker">Témoignages</p>
+                    <h2 class="section-title" id="avis-title">Ils en parlent mieux que moi.</h2>
+                </header>
+                <div class="testimonials">
+                    <figure class="quote-card spotlight">
+                        <i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i>
+                        <blockquote><p>Mario a fait preuve d'un grand professionnalisme dans la refonte de nos sites web clients. Son expertise technique et sa capacité à comprendre les besoins des utilisateurs ont permis d'améliorer significativement l'expérience utilisateur.</p></blockquote>
+                        <figcaption>
+                            <img src="assets/images/aime.webp" alt="Photo de Aimée KOUWAKPONOU" width="48" height="48" loading="lazy" decoding="async">
+                            <div><strong>Aimée KOUWAKPONOU</strong><span>Référente · Trois Ventes Services (TVS)</span></div>
+                        </figcaption>
+                    </figure>
+                    <figure class="quote-card spotlight">
+                        <i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i>
+                        <blockquote><p>Le développement de la plateforme de gestion des TFE par Mario a grandement facilité le suivi des projets de fin d'études. Son travail a démontré une bonne maîtrise des technologies web et une capacité à livrer des solutions adaptées aux besoins spécifiques de l'institut.</p></blockquote>
+                        <figcaption>
+                            <img src="assets/images/abel.webp" alt="Photo de Dr KONNON M. Abel" width="48" height="48" loading="lazy" decoding="async">
+                            <div><strong>Dr KONNON M. Abel</strong><span>Chef de Département GEI · INSTI Lokossa</span></div>
+                        </figcaption>
+                    </figure>
+                    <figure class="quote-card spotlight">
+                        <i class="fa-solid fa-quote-left quote-icon" aria-hidden="true"></i>
+                        <blockquote><p>L'application développée par Mario pour notre projet &quot;Les Semeurs du Royaume&quot; a parfaitement répondu à nos attentes. Sa capacité à transformer notre vision en une solution web fonctionnelle a été déterminante pour le succès de notre initiative.</p></blockquote>
+                        <figcaption>
+                            <img src="assets/images/averin.webp" alt="Photo de Avérin AWELE" width="48" height="48" loading="lazy" decoding="async">
+                            <div><strong>Avérin AWELE</strong><span>Directeur · ONG Campus pour Christ</span></div>
+                        </figcaption>
+                    </figure>
                 </div>
             </div>
-        </footer>
+        </section>
 
-        <!-- Bouton WhatsApp flottant -->
-        <a class="whatsapp-fab" :class="{ visible: scrolled }" :href="whatsappLink" target="_blank"
-            rel="noopener noreferrer" aria-label="Me contacter sur WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-        <!-- Étude de cas (fenêtre) -->
-        <div class="modal" :class="{ active: modalVisible }" v-if="projectModalOpen" @click.self="closeProjectModal"
-            role="dialog" aria-modal="true" :aria-label="currentProject ? currentProject.title : 'Projet'">
-            <div class="modal-panel" v-if="currentProject">
-                <button type="button" class="modal-close" @click="closeProjectModal" aria-label="Fermer"><i
-                        class="fa-solid fa-xmark"></i></button>
-                <div class="frame modal-frame" v-if="currentProject.image">
-                    <div class="frame-bar"><i></i><i></i><i></i><span>{{ currentProject.domain ||
-                            currentProject.title }}</span></div>
-                    <img :src="currentProject.image" :alt="currentProject.title">
+        <!-- ================= À PROPOS + PARCOURS ================= -->
+        <section id="apropos" class="section" aria-labelledby="apropos-title">
+            <div class="container about">
+                <div class="about-photo">
+                    <img src="assets/images/profil.webp" alt="Portrait de Mario Merveille Ligan, développeur web et mobile à Abomey-Calavi" width="700" height="956" loading="lazy" decoding="async">
+                    <p class="photo-badge"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Abomey-Calavi, Bénin</p>
                 </div>
-                <div class="modal-body">
-                    <p class="meta">{{ currentProject.categoryLabel }}<template v-if="currentProject.client"> · {{
-                            currentProject.client }}</template><template v-if="currentProject.status"> · {{
-                            currentProject.status }}</template></p>
-                    <h2>{{ currentProject.title }}</h2>
-                    <div class="tags">
-                        <span class="tag" v-for="tag in currentProject.tags" :key="tag">{{ tag }}</span>
+
+                <div class="about-copy">
+                    <p class="kicker">À propos</p>
+                    <h2 class="section-title left" id="apropos-title">Un développeur qui pense produit, pas seulement code.</h2>
+                    <p>Je suis Mario Merveille Ligan, développeur fullstack web &amp; mobile, diplômé de l'INSTI Lokossa (Licence en informatique et télécommunications). Depuis 2022, je construis des sites, des boutiques et des applications pour des entreprises au Bénin, en France et en Belgique.</p>
+                    <p>Ma force : maîtriser toute la chaîne, de l'interface à l'API et au paiement Mobile Money, pour livrer des produits qui fonctionnent vraiment, et qui rapportent.</p>
+                    <div class="skills">
+                            <div class="skill-group">
+                                <h3>Mobile &amp; Front</h3>
+                                <ul class="tags"><li class="tag tag-icon"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Flutter</li><li class="tag tag-icon"><i class="fa-brands fa-vuejs" aria-hidden="true"></i> Vue 3</li><li class="tag tag-icon"><i class="fa-brands fa-js" aria-hidden="true"></i> TypeScript</li><li class="tag tag-icon"><i class="fa-solid fa-wind" aria-hidden="true"></i> Tailwind</li><li class="tag tag-icon"><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML / CSS</li></ul>
+                            </div>
+                            <div class="skill-group">
+                                <h3>Back-end</h3>
+                                <ul class="tags"><li class="tag tag-icon"><i class="fa-brands fa-laravel" aria-hidden="true"></i> Laravel</li><li class="tag tag-icon"><i class="fa-brands fa-php" aria-hidden="true"></i> PHP</li><li class="tag tag-icon"><i class="fa-brands fa-symfony" aria-hidden="true"></i> Symfony</li><li class="tag tag-icon"><i class="fa-solid fa-database" aria-hidden="true"></i> MySQL</li><li class="tag tag-icon"><i class="fa-solid fa-plug" aria-hidden="true"></i> API REST</li></ul>
+                            </div>
+                            <div class="skill-group">
+                                <h3>CMS &amp; E-commerce</h3>
+                                <ul class="tags"><li class="tag tag-icon"><i class="fa-brands fa-wordpress" aria-hidden="true"></i> WordPress</li><li class="tag tag-icon"><i class="fa-brands fa-shopify" aria-hidden="true"></i> Shopify</li><li class="tag tag-icon"><i class="fa-solid fa-wallet" aria-hidden="true"></i> Mobile Money</li></ul>
+                            </div>
                     </div>
-                    <h3>Contexte</h3>
-                    <p>{{ currentProject.details }}</p>
-                    <template v-if="currentProject.role && currentProject.role.length">
-                        <h3>Ce que j'ai réalisé</h3>
-                        <ul class="check-list">
-                            <li v-for="item in currentProject.role" :key="item"><i class="fa-solid fa-check"></i> {{
-                                item }}</li>
-                        </ul>
-                    </template>
-                    <div class="card-actions">
-                        <a :href="currentProject.demo" class="btn btn-primary btn-sm" target="_blank" rel="noopener"
-                            v-if="currentProject.demo">Voir en ligne <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        <a :href="currentProject.github" class="btn btn-ghost btn-sm" target="_blank" rel="noopener"
-                            v-if="currentProject.github"><i class="fa-brands fa-github"></i> Code source</a>
+                    <div class="about-ctas">
+                        <a href="assets/cv/LIGAN-M_Merveille-CV.pdf" class="btn btn-primary" download="Mario_Ligan_CV.pdf"><i class="fa-solid fa-download" aria-hidden="true"></i> Télécharger mon CV <span class="sr-only">(PDF)</span></a>
+                        <a href="https://www.linkedin.com/in/ligan-mario-965077218/" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
                     </div>
                 </div>
+            </div>
+
+            <div class="container" id="parcours">
+                <h3 class="sub-title">Parcours</h3>
+                <ol class="journey">
+                        <li class="journey-item">
+                            <span class="journey-period">2026 · en cours</span>
+                            <div class="journey-card">
+                                <div class="journey-head"><h4>Développeur fullstack</h4><span class="journey-company">XWE Speed · Aligbonon</span></div>
+                                <p>Conception et développement de deux plateformes complètes : une application immobilière (Flutter + Laravel) et une plateforme de formation et de streaming audiovisuel (Vue 3 + Laravel).</p>
+                            </div>
+                        </li>
+                        <li class="journey-item">
+                            <span class="journey-period">2024 · aujourd'hui</span>
+                            <div class="journey-card">
+                                <div class="journey-head"><h4>Développeur web</h4><span class="journey-company">Trois Ventes Services (TVS)</span></div>
+                                <p>Refonte et maintenance de sites et de boutiques en ligne pour des clients en France et en Belgique (Shopify, WordPress, sites sur mesure).</p>
+                            </div>
+                        </li>
+                        <li class="journey-item">
+                            <span class="journey-period">2023</span>
+                            <div class="journey-card">
+                                <div class="journey-head"><h4>Développeur web</h4><span class="journey-company">INSTI Lokossa</span></div>
+                                <p>Conception, développement et déploiement de la plateforme de gestion des Travaux de Fin d'Étude (Laravel), utilisée aujourd'hui pour plus de 980 rapports.</p>
+                            </div>
+                        </li>
+                        <li class="journey-item">
+                            <span class="journey-period">2022</span>
+                            <div class="journey-card">
+                                <div class="journey-head"><h4>Développeur web</h4><span class="journey-company">ONG Campus pour Christ</span></div>
+                                <p>Maquettes, architecture et développement d'applications web pour l'ONG (Symfony).</p>
+                            </div>
+                        </li>
+                        <li class="journey-item">
+                            <span class="journey-period">2020 · 2023</span>
+                            <div class="journey-card">
+                                <div class="journey-head"><h4>Licence professionnelle</h4><span class="journey-company">INSTI Lokossa</span></div>
+                                <p>Génie électrique et informatique, option informatique et télécommunications.</p>
+                            </div>
+                        </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" class="section contact" aria-labelledby="contact-title">
+            <div class="container contact-inner">
+                <div class="contact-copy">
+                    <p class="kicker">Contact</p>
+                    <h2 class="section-title left" id="contact-title">Parlons de votre projet.</h2>
+                    <p class="section-sub left">Décrivez votre besoin en quelques lignes. Je vous réponds avec une première proposition claire, sans engagement.</p>
+                    <div class="contact-cards">
+                        <a class="contact-card whatsapp" href="https://wa.me/2290151875012?text=Bonjour%20Mario%2C%20j'ai%20vu%20votre%20portfolio%20et%20j'aimerais%20vous%20parler%20d'un%20projet." target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                            <div><strong>WhatsApp</strong><span>Le plus rapide</span></div>
+                            <i class="fa-solid fa-arrow-right go" aria-hidden="true"></i>
+                        </a>
+                        <a class="contact-card" href="mailto:marioligan41@gmail.com">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <div><strong>marioligan41@gmail.com</strong><span>Email</span></div>
+                            <i class="fa-solid fa-arrow-right go" aria-hidden="true"></i>
+                        </a>
+                        <a class="contact-card" href="tel:+2290151875012">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <div><strong>+229 01 51 87 50 12</strong><span>Téléphone</span></div>
+                            <i class="fa-solid fa-arrow-right go" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form spotlight" novalidate>
+                    <div class="field-row">
+                        <label class="field"><span>Nom</span><input type="text" name="from_name" autocomplete="name" required placeholder="Votre nom"></label>
+                        <label class="field"><span>Email</span><input type="email" name="from_email" autocomplete="email" required placeholder="vous@exemple.com"></label>
+                    </div>
+                    <label class="field"><span>Sujet</span><input type="text" name="subject" required placeholder="Site, boutique, application…"></label>
+                    <label class="field"><span>Votre projet</span><textarea name="message" rows="5" required placeholder="Objectif, délais, budget approximatif…"></textarea></label>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Envoyer le message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= PIED DE PAGE ================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-cta">
+                <p class="footer-cta-title">Un projet en tête ?</p>
+                <a href="#contact" class="btn btn-primary btn-lg">Démarrer un projet <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#accueil" class="brand"><img src="assets/images/logoMario.webp" alt="" width="36" height="36" loading="lazy"><span>Mario Ligan</span></a>
+                    <p>Développeur fullstack web &amp; mobile. Sites, boutiques en ligne et applications qui font vendre, depuis le Bénin.</p>
+                </div>
+                <nav class="footer-nav" aria-label="Pied de page">
+                    <p class="footer-heading">Navigation</p>
+                    <ul><li><a href="#projets">Réalisations</a></li><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#avis">Avis</a></li><li><a href="#apropos">À propos</a></li><li><a href="#contact">Contact</a></li></ul>
+                </nav>
+                <div class="footer-social">
+                    <p class="footer-heading">Me suivre</p>
+                    <ul class="social-list"><li><a href="https://www.linkedin.com/in/ligan-mario-965077218/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></a></li><li><a href="https://github.com/Only-Mario" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a></li><li><a href="https://www.facebook.com/mariomerveille.ligan.9/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i><span>Facebook</span></a></li><li><a href="https://wa.me/2290151875012" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a></li></ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span data-year>2026</span> Mario Merveille Ligan. Tous droits réservés.</p>
+                <a href="#accueil" class="back-top">Haut de page <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <a class="whatsapp-fab" href="https://wa.me/2290151875012?text=Bonjour%20Mario%2C%20j'ai%20vu%20votre%20portfolio%20et%20j'aimerais%20vous%20parler%20d'un%20projet." target="_blank" rel="noopener noreferrer" aria-label="Me contacter sur WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <!-- Fenêtre « étude de cas » (remplie par app.js) -->
+    <div class="modal" id="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-title" hidden>
+        <div class="modal-panel">
+            <button type="button" class="modal-close" aria-label="Fermer"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            <div class="frame modal-frame"><div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span class="case-domain"></span></div><img class="case-image" src="" alt=""></div>
+            <div class="modal-body">
+                <p class="meta case-meta"></p>
+                <h2 id="case-title" class="case-title"></h2>
+                <div class="tags case-tags"></div>
+                <h3>Contexte</h3>
+                <p class="case-details"></p>
+                <div class="case-role-wrap">
+                    <h3>Ce que j'ai réalisé</h3>
+                    <ul class="check-list case-role"></ul>
+                </div>
+                <div class="card-actions case-actions"></div>
             </div>
         </div>
     </div>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Mario Merveille Ligan",
-        "jobTitle": "Développeur Fullstack Web & Mobile",
-        "url": "https://marioligan.netlify.app/",
-        "image": "https://marioligan.netlify.app/assets/images/og-image.jpg",
-        "email": "mailto:marioligan41@gmail.com",
-        "telephone": "+2290151875012",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Abomey-Calavi",
-            "addressCountry": "BJ"
-        },
-        "description": "Développeur fullstack web et mobile au Bénin : sites, boutiques en ligne et applications Laravel, Flutter, Vue, WordPress et Shopify.",
-        "sameAs": [
-            "https://www.linkedin.com/in/ligan-mario-965077218/",
-            "https://github.com/Only-Mario"
-        ],
-        "knowsAbout": ["Laravel", "Flutter", "Vue.js", "WordPress", "Shopify", "Symfony", "Développement d'applications mobiles", "E-commerce", "Mobile Money"],
-        "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "Institut National Supérieur de Technologie Industrielle (INSTI) de Lokossa"
-        }
-    }
-    </script>
-
+    <script type="application/json" id="case-data">{"xwe-speed":{"title":"XWE Speed","image":"assets/images/projects/xwespeed.webp","domain":"xwespeed.1gb.ru","meta":"Application mobile & web · Bénin · En cours de développement","tags":["Flutter","Laravel 13","MySQL","Kkiapay"],"details":"XWE Speed est une plateforme immobilière pensée pour le Bénin : les particuliers louent, achètent, font construire ou règlent leurs formalités foncières, et peuvent proposer leurs propres biens. L'équipe vérifie chaque annonce avant publication. Je développe l'ensemble du produit : l'application mobile, le site web, l'API et le panel d'administration.","role":["Application mobile Flutter (iOS & Android) : catalogue, filtres, favoris, carte et messagerie","Site web public de recherche de biens","API REST et panel d'administration Laravel 13","Connexion par code OTP (email et WhatsApp)","Paiement Mobile Money intégré avec Kkiapay"],"demo":"http://xwespeed.1gb.ru/","github":""},"aligbonon-acoustic-production":{"title":"Aligbonon Acoustic & Production","image":"assets/images/projects/aligbonon.webp","domain":"aligbonon","meta":"Plateforme web · Bénin · En cours de développement","tags":["Vue 3","TypeScript","Laravel 13","Tailwind"],"details":"Aligbonon Acoustic & Production forme aux métiers de l'audiovisuel à Agori (Abomey-Calavi). Je développe la plateforme complète à partir de leur cahier des charges : le site vitrine, l'espace étudiant, la chaîne de streaming Aligbonon TV et l'administration.","role":["Site vitrine et catalogue des formations","Espace étudiant : cours vidéo, quiz et suivi de progression","Aligbonon TV : plateforme de streaming par catégories","Back-office : validation des inscriptions, paiements, statistiques","API Laravel 13 sécurisée (Sanctum)"],"demo":"https://aligbonon-frotend.netlify.app/","github":""},"kinetik-paris":{"title":"kinetik Paris","image":"assets/images/projects/kinetik.webp","domain":"","meta":"E-commerce","tags":["Shopify","JavaScript","Liquid"],"details":"Refonte des pages produits pour les catégories Homme, Femme. Optimisation de l'expérience utilisateur sur la boutique en ligne.","role":[],"demo":"https://kinetikadrenalink.com/","github":""},"neo-animalia":{"title":"NEO ANIMALIA","image":"assets/images/projects/neoanimalia.webp","domain":"","meta":"Site & plateforme · Belgique","tags":["Bootstrap","CSS","JS"],"details":"Refonte complète de toutes les pages du site de NEO ANIMALIA, organisme belge fondé en 2009 par des professionnels du secteur vétérinaire. Design moderne et responsive, mise en avant du catalogue de formations (chirurgie, échographie, cardiologie…), des chiffres clés (110 journées de formation par an, plus de 2 700 vétérinaires formés) et de l'espace de connexion des participants.","role":["Refonte de toutes les pages du site","Intégration responsive (mobile, tablette, ordinateur)","Mise en avant du catalogue de formations et des chiffres clés"],"demo":"https://neoanimalia.be/","github":""},"les-sens-de-capucine":{"title":"Les sens de capucine","image":"assets/images/projects/capucine.webp","domain":"","meta":"Site & plateforme · France","tags":["WordPress","PHP","CSS3"],"details":"Projet de refonte complète incluant la sauvegarde des données, la refonte de la page d'accueil, des pages Beautés, Looks/Mode, Lifestyle, shopping et Contact. Refonte des menus et ajout de la fonctionnalité de recherche.","role":["Sauvegarde et migration des contenus","Refonte de l'accueil et des rubriques (Beauté, Looks/Mode, Lifestyle, Shopping)","Nouveaux menus et moteur de recherche"],"demo":"https://lessensdecapucine.com/","github":""},"moguo-paris":{"title":"Moguo Paris","image":"assets/images/projects/moguo.webp","domain":"","meta":"E-commerce","tags":["Shopify","JavaScript","Liquid"],"details":"Revue de fonctionnalités sur l'ajout et l'affichage de produits. Refonte des pages produits pour les catégories Homme, Femme et Enfant. Optimisation de l'expérience utilisateur sur la boutique en ligne.","role":[],"demo":"https://moguoparis.fr/","github":""},"pippacorner":{"title":"PIPPACORNER","image":"assets/images/projects/pippacorner.webp","domain":"","meta":"E-commerce","tags":["PixFizz","CSS","JavaScript"],"details":"Refonte complète de la page d'accueil de la boutique en ligne PIPPACORNER pour améliorer l'expérience utilisateur et l'esthétique du site.","role":[],"demo":"https://pippacorner.pixfizz.com/","github":""},"plateforme-de-gestion-de-tfe":{"title":"Plateforme de gestion de TFE","image":"assets/images/projects/rapports.webp","domain":"","meta":"Site & plateforme · Bénin","tags":["Laravel","PHP","MySQL"],"details":"Conception, développement et déploiement d'une plateforme complète pour la gestion des Travaux de Fin d'Étude à l'INSTI Lokossa, permettant aux étudiants et aux enseignants de suivre et d'évaluer les projets de fin d'études. Elle publie aujourd'hui plus de 980 rapports et mémoires (Licence, Master, Doctorat), avec une recherche par thème, auteur, encadrant ou lieu de stage et des filtres par filière et par année.","role":["Conception de la base de données et de l'architecture","Développement Laravel (dépôt, suivi et évaluation des TFE)","Recherche et filtres par filière, niveau et année","Déploiement en production"],"demo":"https://rapports.insti.edu.bj/","github":"https://github.com/Only-Mario/Gestion_de_tfe-laravel-"}}</script>
     <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script defer src="assets/script.js"></script>
-    <script defer src="assets/animations.js"></script>
 </body>
 
 </html>
